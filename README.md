@@ -1,4 +1,4 @@
-# ReactApp
+   # ReactApp
 
 Этот проект реализует пагинацию и поиск по списку продуктов, используя JS, React 18, RTL и API https://dummyjson.com/docs/products.
 
