@@ -9,8 +9,8 @@ jest.mock('axios');
 
 const mockProducts = {
   products: [
-    { id: 1, title: 'Product 1' },
-    { id: 2, title: 'Product 2' },
+    { id: 1, title: 'Product one' },
+    { id: 2, title: 'Product two' },
   ],
   total: 2,
 };
@@ -23,8 +23,8 @@ test('renders product list and paginates', async () => {
   expect(screen.getByPlaceholderText('Search products...')).toBeInTheDocument();
 
   await waitFor(() => {
-    expect(screen.getByText('Product 1')).toBeInTheDocument();
-    expect(screen.getByText('Product 2')).toBeInTheDocument();
+    expect(screen.getByText('Product one')).toBeInTheDocument();
+    expect(screen.getByText('Product two')).toBeInTheDocument();
   });
 
   expect(screen.getByText('1')).toBeInTheDocument();
@@ -40,7 +40,7 @@ test('searches for products', async () => {
   fireEvent.change(searchInput, { target: { value: 'Product' } });
 
   await waitFor(() => {
-    expect(screen.getByText('Product 1')).toBeInTheDocument();
-    expect(screen.getByText('Product 2')).toBeInTheDocument();
+    expect(screen.getByText('Product one')).toBeInTheDocument();
+    expect(screen.getByText('Product two')).toBeInTheDocument();
   });
 });
